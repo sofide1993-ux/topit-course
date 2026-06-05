@@ -2,30 +2,431 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Как стать топовым айтишником</title>
+
 <style>
-body{margin:0;background:#050505;color:white;font-family:Arial,sans-serif}
-.hero{padding:70px 20px;text-align:center}
-.green{color:#7dff00}
-.card{max-width:1000px;margin:20px auto;padding:24px;background:#111;border-radius:16px}
-.btn{display:inline-block;padding:16px 28px;background:#7dff00;color:#111;text-decoration:none;border-radius:12px;font-weight:bold}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+section{
+padding:80px 20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:
+radial-gradient(circle at center,#183300 0%,#050505 60%);
+}
+
+.hero-content{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+width:100%;
+}
+
+.hero-text{
+flex:1;
+}
+
+.hero h1{
+font-size:clamp(42px,8vw,96px);
+line-height:0.95;
+font-weight:900;
+}
+
+.green{
+color:#7dff00;
+}
+
+.subtitle{
+font-size:clamp(20px,3vw,34px);
+margin-top:15px;
+color:#ffbf43;
+font-style:italic;
+}
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+}
+
+.hero-image img{
+max-width:500px;
+width:100%;
+animation:float 4s ease-in-out infinite;
+filter:drop-shadow(0 0 40px #7dff00);
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-15px)}
+100%{transform:translateY(0)}
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:18px 36px;
+background:#7dff00;
+color:#111;
+font-weight:900;
+text-decoration:none;
+border-radius:14px;
+font-size:20px;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1)}
+50%{transform:scale(1.05)}
+100%{transform:scale(1)}
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.card{
+background:#111;
+border:1px solid #222;
+padding:25px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:#7dff00;
+}
+
+.card h3{
+color:#7dff00;
+margin-bottom:10px;
+}
+
+.section-title{
+font-size:48px;
+text-align:center;
+margin-bottom:20px;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+margin-top:40px;
+}
+
+.stat{
+background:#111;
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.number{
+font-size:42px;
+font-weight:900;
+color:#7dff00;
+}
+
+.certificate{
+max-width:800px;
+margin:40px auto;
+background:#111;
+border:3px solid #7dff00;
+border-radius:24px;
+padding:50px;
+text-align:center;
+}
+
+.certificate h2{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.bike-section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+overflow:hidden;
+}
+
+.bike-section::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.55),
+rgba(0,0,0,.55));
+z-index:1;
+}
+
+.bike-content{
+position:relative;
+z-index:2;
+text-align:center;
+}
+
+.bike-content img{
+max-width:700px;
+width:100%;
+animation:float 5s ease-in-out infinite;
+}
+
+.quote{
+font-size:clamp(40px,6vw,90px);
+font-weight:900;
+margin-bottom:20px;
+}
+
+.footer{
+text-align:center;
+}
+
+.qr{
+width:220px;
+height:220px;
+background:white;
+margin:30px auto;
+display:flex;
+align-items:center;
+justify-content:center;
+color:black;
+font-weight:bold;
+border-radius:20px;
+}
+
+.telegram{
+display:inline-block;
+padding:16px 30px;
+background:#229ED9;
+color:white;
+text-decoration:none;
+border-radius:12px;
+margin-top:10px;
+}
+
+@media(max-width:900px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+max-width:320px;
+}
+
+.quote{
+font-size:50px;
+}
+
+}
 </style>
 </head>
+
 <body>
-<div class="hero">
-<h1>КАК СТАТЬ <span class="green">ТОПОВЫМ</span> АЙТИШНИКОМ</h1>
-<p>и получать много денег</p>
-<p>🚴 «Ты учись, а я поехал»</p>
-<a class="btn">СТАТЬ ЛЕГЕНДОЙ</a>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<div style="color:#7dff00;font-weight:bold;margin-bottom:20px;">
+ОНЛАЙН-КУРС
 </div>
+
+<h1>
+КАК СТАТЬ
+<span class="green">ТОПОВЫМ</span>
+АЙТИШНИКОМ
+</h1>
+
+<div class="subtitle">
+и получать много денег
+</div>
+
+<p style="margin-top:20px;font-size:20px;">
+Пошаговая система от человека,
+который уже на другом уровне сознания 😎
+</p>
+
+<a href="#signup" class="btn">
+ХОЧУ СТАТЬ ТОПОВЫМ
+</a>
+
+</div>
+
+<div class="hero-image">
+<img src="person.png" alt="">
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Что ты получишь
+</h2>
+
+<div class="cards">
+
 <div class="card">
-<h2 class="green">Что ты получишь</h2>
-<ul>
-<li>Мышление миллионера в IT</li>
-<li>Секретные лайфхаки от гуру</li>
-<li>Как работать 2 часа в день и зарабатывать 500к+</li>
-</ul>
+<h3>💰 Мышление миллионера</h3>
+<p>Начнёшь смотреть на зарплату менее 500к как на интересный исторический факт.</p>
 </div>
+
+<div class="card">
+<h3>🤖 100+ нейросетей</h3>
+<p>Они будут работать, пока ты пьёшь чай и выглядишь занятым.</p>
+</div>
+
+<div class="card">
+<h3>🚀 План до успеха</h3>
+<p>От ноунейма до легенды за рекордно сомнительные сроки.</p>
+</div>
+
+<div class="card">
+<h3>☕ Навык профи</h3>
+<p>Научишься уверенно пить доширак из кружки как настоящий эксперт.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="section-title">
+Доказано учениками
+</h2>
+
+<div class="stats">
+
+<div class="stat">
+<div class="number">+150 000 ₽</div>
+<p>через 2 недели</p>
+</div>
+
+<div class="stat">
+<div class="number">+300 000 ₽</div>
+<p>через месяц</p>
+</div>
+
+<div class="stat">
+<div class="number">+500 000 ₽</div>
+<p>через 2 месяца</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="certificate">
+
+<h2>
+🏆 Официально топовый айтишник
+</h2>
+
+<p style="font-size:24px;">
+Сертификат подтверждает,
+что обладатель очень уверенно выглядит рядом с ноутбуком.
+</p>
+
+<br>
+
+<p>
+Подпись комиссии:
+<br><br>
+«Вроде шарит»
+</p>
+
+</div>
+
+</section>
+
+<section class="bike-section">
+
+<div class="bike-content">
+
+<div class="quote">
+Ты учись,<br>
+<span class="green">а я поехал</span>
+</div>
+
+<img src="bike.png" alt="">
+
+</div>
+
+</section>
+
+<section id="signup" class="footer">
+
+<h2 class="section-title">
+Записаться на курс
+</h2>
+
+<div class="qr">
+QR КОД
+</div>
+
+<p>
+https://sofide1993-ux.github.io/topit-course/
+</p>
+
+<br>
+
+<a class="telegram" href="#">
+Telegram
+</a>
+
+</section>
+
 </body>
 </html>
