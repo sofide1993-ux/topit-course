@@ -3,80 +3,259 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
 <title>Как стать топовым айтишником</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:#050505;color:#fff;overflow-x:hidden}
-html{scroll-behavior:smooth}
-.hero{min-height:100vh;display:flex;align-items:center;padding:40px;background:radial-gradient(circle,#183300 0%,#050505 60%)}
-.wrap{max-width:1200px;margin:auto;width:100%}
-.hero-grid{display:flex;gap:40px;align-items:center}
-.hero-text{flex:1}
-.hero-img{flex:1;text-align:center}
-.hero-img img{max-width:420px;width:90%;filter:drop-shadow(0 0 30px #7dff00);animation:float 4s ease-in-out infinite}
-h1{font-size:clamp(42px,8vw,90px);line-height:.95}
-.green{color:#7dff00}
-.gold{color:#ffbf43}
-.btn{display:inline-block;background:#7dff00;color:#111;padding:18px 32px;border-radius:14px;text-decoration:none;font-weight:bold;margin-top:25px}
-section{padding:80px 20px}
-.cards,.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{background:#111;padding:24px;border-radius:18px;border:1px solid #222;transition:.3s}
-.card:hover{transform:translateY(-6px)}
-.title{text-align:center;font-size:46px;margin-bottom:30px}
-.number{font-size:40px;color:#7dff00;font-weight:bold}
-.cert{max-width:800px;margin:auto;background:#111;border:3px solid #7dff00;padding:40px;border-radius:20px;text-align:center}
-.formbox{max-width:700px;margin:auto;background:#111;padding:30px;border-radius:20px}
-input{width:100%;padding:16px;border:none;border-radius:12px;margin:10px 0}
-button{width:100%;padding:18px;border:none;border-radius:12px;background:#7dff00;font-weight:bold;cursor:pointer}
-#success{display:none;margin-top:20px;background:#143000;padding:20px;border-radius:12px}
-.bike{text-align:center;min-height:100vh;display:flex;align-items:center;justify-content:center}
-.bike img{max-width:700px;width:95%;animation:float 5s ease-in-out infinite}
-.quote{font-size:clamp(40px,7vw,90px);font-weight:bold}
-.money{position:fixed;top:-50px;opacity:.25;pointer-events:none;animation:fall linear infinite}
-@keyframes fall{from{transform:translateY(-100px)}to{transform:translateY(120vh)}}
-@keyframes float{50%{transform:translateY(-15px)}}
-@media(max-width:900px){.hero-grid{flex-direction:column;text-align:center}}
+body{
+font-family:Arial,sans-serif;
+background:#050505;
+color:#fff;
+overflow-x:hidden;
+}
+html{
+scroll-behavior:smooth;
+}
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:40px;
+background:radial-gradient(circle,#183300 0%,#050505 60%);
+}
+.wrap{
+max-width:1200px;
+margin:auto;
+width:100%;
+}
+.hero-grid{
+display:flex;
+gap:40px;
+align-items:center;
+}
+.hero-text{
+flex:1;
+}
+.hero-img{
+flex:1;
+text-align:center;
+}
+.hero-img img{
+max-width:420px;
+width:90%;
+filter:drop-shadow(0 0 30px #7dff00);
+animation:float 4s ease-in-out infinite;
+}
+h1{
+font-size:clamp(42px,8vw,90px);
+line-height:.95;
+}
+.green{
+color:#7dff00;
+}
+.gold{
+color:#ffbf43;
+}
+.btn{
+display:inline-block;
+background:#7dff00;
+color:#111;
+padding:18px 32px;
+border-radius:14px;
+text-decoration:none;
+font-weight:bold;
+margin-top:25px;
+}
+section{
+padding:80px 20px;
+}
+.cards,.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
+.card{
+background:#111;
+padding:24px;
+border-radius:18px;
+border:1px solid #222;
+transition:.3s;
+}
+.card:hover{
+transform:translateY(-6px);
+}
+.title{
+text-align:center;
+font-size:46px;
+margin-bottom:30px;
+}
+.number{
+font-size:40px;
+color:#7dff00;
+font-weight:bold;
+}
+.cert{
+max-width:800px;
+margin:auto;
+background:#111;
+border:3px solid #7dff00;
+padding:40px;
+border-radius:20px;
+text-align:center;
+}
+.formbox{
+max-width:700px;
+margin:auto;
+background:#111;
+padding:30px;
+border-radius:20px;
+}
+input{
+width:100%;
+padding:16px;
+border:none;
+border-radius:12px;
+margin:10px 0;
+}
+button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:12px;
+background:#7dff00;
+font-weight:bold;
+cursor:pointer;
+}
+#success{
+display:none;
+margin-top:20px;
+background:#143000;
+padding:20px;
+border-radius:12px;
+}
+.bike{
+text-align:center;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.bike img{
+max-width:700px;
+width:95%;
+animation:float 5s ease-in-out infinite;
+}
+.quote{
+font-size:clamp(40px,7vw,90px);
+font-weight:bold;
+}
+.money{
+position:fixed;
+top:-50px;
+opacity:.25;
+pointer-events:none;
+animation:fall linear infinite;
+}
+.video-box{
+max-width:450px;
+margin:auto;
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 0 40px rgba(125,255,0,.4);
+border:2px solid #7dff00;
+}
+.video-box video{
+width:100%;
+display:block;
+}
+@keyframes fall{
+from{transform:translateY(-100px)}
+to{transform:translateY(120vh)}
+}
+@keyframes float{
+50%{transform:translateY(-15px)}
+}
+@media(max-width:900px){
+.hero-grid{
+flex-direction:column;
+text-align:center;
+}
+}
 </style>
 </head>
 <body>
-
 <div class="money" style="left:5%;animation-duration:10s">💸</div>
 <div class="money" style="left:20%;animation-duration:12s">$</div>
 <div class="money" style="left:35%;animation-duration:9s">💰</div>
 <div class="money" style="left:55%;animation-duration:11s">💸</div>
 <div class="money" style="left:75%;animation-duration:13s">$</div>
 <div class="money" style="left:90%;animation-duration:10s">💰</div>
-
 <section class="hero">
 <div class="wrap hero-grid">
 <div class="hero-text">
 <div class="green"><b>ОНЛАЙН-КУРС</b></div>
-<h1>КАК СТАТЬ <span class="green">ТОПОВЫМ</span> АЙТИШНИКОМ</h1>
-<p class="gold" style="font-size:30px;margin-top:10px">и получать много денег</p>
-<p style="margin-top:20px">Не мечтай — делай деньги!</p>
-<a class="btn" href="#signup">ХОЧУ СТАТЬ ТОПОВЫМ</a>
+<h1>
+КАК СТАТЬ
+<span class="green">ТОПОВЫМ</span>
+АЙТИШНИКОМ
+</h1>
+<p class="gold" style="font-size:30px;margin-top:10px">
+и получать много денег
+</p>
+<p style="margin-top:20px">
+Не мечтай — делай деньги!
+</p>
+<a class="btn" href="#signup">
+ХОЧУ СТАТЬ ТОПОВЫМ
+</a>
 </div>
 <div class="hero-img">
 <img src="person.png" alt="person">
 </div>
 </div>
 </section>
-
 <section>
 <div class="wrap">
-<h2 class="title">Что ты получишь</h2>
-<div class="cards">
-<div class="card"><h3>💰 Мышление миллионера</h3><p>Смотришь на зарплату иначе.</p></div>
-<div class="card"><h3>🤖 100+ нейросетей</h3><p>Работают пока ты отдыхаешь.</p></div>
-<div class="card"><h3>🚀 План успеха</h3><p>От ноунейма до легенды.</p></div>
-<div class="card"><h3>☕ Навык профи</h3><p>Пить доширак из кружки уверенно.</p></div>
+<h2 class="title">
+🎬 Посмотри видео
+</h2>
+<div class="video-box">
+<video autoplay muted loop playsinline>
+<source src="video.mp4" type="video/mp4">
+</video>
 </div>
 </div>
 </section>
-
 <section>
 <div class="wrap">
-<h2 class="title">Доказано учениками</h2>
+<h2 class="title">
+Что ты получишь
+</h2>
+<div class="cards">
+<div class="card">
+<h3>💰 Мышление миллионера</h3>
+<p>Смотришь на зарплату иначе.</p>
+</div>
+<div class="card">
+<h3>🤖 100+ нейросетей</h3>
+<p>Работают пока ты отдыхаешь.</p>
+</div>
+<div class="card">
+<h3>🚀 План успеха</h3>
+<p>От ноунейма до легенды.</p>
+</div>
+<div class="card">
+<h3>☕ Навык профи</h3>
+<p>Пить доширак из кружки уверенно.</p>
+</div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<h2 class="title">
+Доказано учениками
+</h2>
 <div class="stats">
 <div class="card"><div class="number">+150 000 ₽</div></div>
 <div class="card"><div class="number">+300 000 ₽</div></div>
@@ -84,37 +263,48 @@ button{width:100%;padding:18px;border:none;border-radius:12px;background:#7dff00
 </div>
 </div>
 </section>
-
 <section>
 <div class="cert">
 <h2>🏆 Официально топовый айтишник</h2>
-<p>Сертификат подтверждает, что обладатель очень уверенно выглядит рядом с ноутбуком.</p>
+<p>
+Сертификат подтверждает,
+что обладатель очень уверенно выглядит рядом с ноутбуком.
+</p>
 <br>
-<p>Подпись комиссии: «Вроде шарит»</p>
+<p>
+Подпись комиссии:
+«Вроде шарит»
+</p>
 </div>
 </section>
-
 <section id="signup">
 <div class="formbox">
-<h2 class="title" style="font-size:38px">🚀 Оставить заявку</h2>
+<h2 class="title" style="font-size:38px">
+🚀 Оставить заявку
+</h2>
 <input id="name" placeholder="Ваше имя">
 <input id="phone" placeholder="Ваш телефон">
-<button onclick="sendForm()">СТАТЬ ТОПОВЫМ</button>
-<div style="margin-top:15px;color:#aaa">🔥 Уже оставили заявку 127 человек</div>
+<button onclick="sendForm()">
+СТАТЬ ТОПОВЫМ
+</button>
+<div style="margin-top:15px;color:#aaa">
+🔥 Уже оставили заявку 127 человек
+</div>
 <div id="success">
 🎉 Поздравляем! Ваша заявка успешно отправлена.<br>
 Наш специалист по достижению успеха свяжется с вами в ближайшее время.
 </div>
 </div>
 </section>
-
 <section class="bike">
 <div>
-<div class="quote">Ты учись,<br><span class="green">а я поехал</span></div>
+<div class="quote">
+Ты учись,<br>
+<span class="green">а я поехал</span>
+</div>
 <img src="bike.png" alt="bike">
 </div>
 </section>
-
 <script>
 function sendForm(){
 document.getElementById('success').style.display='block';
@@ -122,6 +312,5 @@ document.getElementById('name').value='';
 document.getElementById('phone').value='';
 }
 </script>
-
 </body>
 </html>
